@@ -1,0 +1,12 @@
+sex = 0 for both, 1 for male, 2 for female
+type = 0 for per hour, 1 for per person
+area = 0 for cities, 1 for towns and suburbs 2 for rural, 3 for all   // i appologise for 0 not being all - all was an option found later on
+
+
+SELECT * FROM `employment` WHERE `country` = 'United Kingdom' AND `sex` = 2;
+
+
+
+total employment rate vs productivity per hour in 2005 ordered by year then country
+
+SELECT employment.country, employment.rate, productivity.productivity FROM employment INNER JOIN productivity ON employment.country = productivity.country AND employment.year = productivity.year WHERE employment.sex=0 AND productivity.type=0 AND employment.year = 2005 ORDER BY employment.year, employment.country;
